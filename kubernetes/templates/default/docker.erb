@@ -12,7 +12,7 @@ INSECURE_REGISTRY="<%= @registry_url %>"
 
 other_args="${DOCKER_OPTS} --insecure-registry ${INSECURE_REGISTRY}"
 #other_args="--bip=${FLANNEL_SUBNET} --mtu=${FLANNEL_MTU} --ip-masq=${FLANNEL_IPMASQ} --insecure-registry ${INSECURE_REGISTRY}"
-DOCKER_CERT_PATH=/etc/docker
+#DOCKER_CERT_PATH=/etc/docker
 
 # Location used for temporary files, such as those created by
 # # docker load and build operations. Default is /var/lib/docker/tmp
