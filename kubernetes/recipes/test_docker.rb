@@ -7,7 +7,7 @@ package "bridge-utils" do
   action :install
 end
 
-service "docker" do
+service "test_docker" do
   action :disable
 end
 
