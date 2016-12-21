@@ -7,7 +7,7 @@ ip_enable_ba = nil
 
 if major_version == "11"
     node['opsworks']['layers']['etcd']['instances'].each do |inst|
-	    members << inst[0]+"=http://"+inst[1][:private_ip]+":2380"
+	    members << inst[0]+"=http://"+inst[1][:private_ip]+":7001"
 	    if ip_enable_ba == nil
 		    ip_enable_ba = inst[1][:private_ip]
 	    end
@@ -16,7 +16,7 @@ if major_version == "11"
 
 else #Chef 12
     search(:node, "name:etcd*").each do |inst|
-        members << inst['hostname']+"=http://"+inst['ipaddress']+":2380"
+        members << inst['hostname']+"=http://"+inst['ipaddress']+":7001"
         if ip_enable_ba == nil
             ip_enable_ba = inst['ipaddress']
         end
