@@ -18,7 +18,7 @@ template "/root/etcd_static_bootstrap.sh" do
 		:hostname => hostname,
 		:members => members.join(','),
 		:private_ip => private_ip,
-		:token_postfix => node[:token]
+		:token_postfix => node['etcd']['token']
 	})
 	notifies :stop, "service[etcd]", :delayed
 end
