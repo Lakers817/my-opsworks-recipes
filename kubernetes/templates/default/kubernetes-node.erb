@@ -36,6 +36,8 @@ start() {
 	echo $"Starting kubelet: "
 	daemon $kubelet_prog \
 		--api_servers=http://<%= @master_url %>:8080 \
+                --cluster-domain=<%= @dns_domain %> \
+                --cluster-dns=<%= @dns_ip %> \
 		--v=2 \
 		--address=0.0.0.0 \
 		--enable_server \
