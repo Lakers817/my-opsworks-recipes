@@ -16,6 +16,7 @@ bash 'start_flanneld' do
 end
 
 service "kube-apiserver" do
+        sleep 30
 	action :nothing
 	notifies :start, 'service[kube-scheduler]', :immediately
 	notifies :start, 'service[kube-controller-manager]', :immediately
