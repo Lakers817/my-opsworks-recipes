@@ -1,5 +1,6 @@
 
 include_recipe 'kubernetes-rhel::k8s-setup'
+include_recipe 'kubernetes-rhel::firewall'
 
 etcd_endpoint="http://root:#{node['etcd']['password']}@#{node['etcd']['elb_url']}:80"
 
