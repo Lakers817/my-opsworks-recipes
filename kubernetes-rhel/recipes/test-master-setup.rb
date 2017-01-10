@@ -22,7 +22,7 @@ end
 template "/etc/kubernetes/apiserver" do
 	mode "0755"
 	owner "root"
-	source "master-apiserver.conf.erb"
+	source "test-master-apiserver.conf.erb"
 	variables({
 		:etcd_server => etcd_endpoint,
 		:ba_path => "/opt/ba_file",
