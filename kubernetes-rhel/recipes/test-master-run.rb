@@ -12,10 +12,19 @@ bash 'start_flanneld' do
 	systemctl daemon-reload
 	service flanneld start
 	EOH
+notifies :start, 'service[kube-apiserver]', :immediately
 end
 
-%w(kube-apiserver kube-controller-manager kube-scheduler).each do |service|
-  service service do
-    action [:enable, :restart]
-     sleep(20)
-  end
+service "kube-apiserver" do
+	action :nothing
+	notifies :start, 'service[kube-scheduler]', :immediately
+	notifies :start, 'service[kube-controller-manager]', :immediately
+end
+
+service "kube-scheduler" do
+	action :nothing
+end
+
+service "kube-controller-manager" do
+	action :nothing
+end
