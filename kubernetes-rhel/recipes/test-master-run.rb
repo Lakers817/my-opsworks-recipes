@@ -12,7 +12,9 @@ bash 'start_flanneld' do
 	systemctl daemon-reload
 	service flanneld start
 	EOH
+     sleep 20
 notifies :start, 'service[kube-apiserver]', :immediately
+sleep 30
 end
 
 service "kube-apiserver" do
