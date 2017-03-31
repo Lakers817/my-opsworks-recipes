@@ -18,13 +18,13 @@
    end
     end
 
- bash 'install_cassandra' do
+ execute 'install_cassandra' do
   user 'root'
-  cwd '/tmp/cass/'
-  code <<-EOH
+  cwd '/tmp'
+  command <<-EOH
   curl -OL http://www.apache.org/dist/cassandra/3.0.12/apache-cassandra-3.0.12-bin.tar.gz
   tar -xzvf apache-cassandra-3.0.12-bin.tar.gz
-  mv apache-cassandra-3.0.12  ~/cassandra
+  mv apache-cassandra-3.0.12  /home/ubuntu/cassandra
   EOH
    end
 
