@@ -25,6 +25,7 @@
   curl -OL http://www.apache.org/dist/cassandra/3.0.12/apache-cassandra-3.0.12-bin.tar.gz
   tar -xzvf apache-cassandra-3.0.12-bin.tar.gz
   mv apache-cassandra-3.0.12  /home/ubuntu/cassandra
+  chown -R ubuntu:ubuntu /home/ubuntu/cassandra
   EOH
    end
 
