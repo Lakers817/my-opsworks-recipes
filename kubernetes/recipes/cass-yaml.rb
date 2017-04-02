@@ -19,4 +19,10 @@
    )
   end
 
-
+   template "#{document_root}/logback.xml" do
+  source 'logback.xml.erb'
+  mode '644'
+  variables(
+   :cass_log => node['cassandra']['logs']
+   )
+  end
