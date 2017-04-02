@@ -19,7 +19,7 @@
    )
   end
 
-   template "#{document_root}/logback.xml" do
+  template "#{document_root}/logback.xml" do
   source 'logback.xml.erb'
   mode '644'
   variables(
