@@ -5,7 +5,8 @@
   mode '644'
   variables(
    :private_ip => node['ipaddress'] ,
-   :seed_node => node['cassandra']['seed_node']
+   :seed_node => node['cassandra']['seed_node'],
+   :snitch_type => node['cassandra']['endpoint_snitch']
    )
   end
 
