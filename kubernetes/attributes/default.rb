@@ -3,3 +3,5 @@ default['cassandra']['rack'] = 'rack2'
 default['cassandra']['data_center'] = 'dc2'
 default['cassandra']['seed_node'] = '0.0.0.0'
 default['cassandra']['endpoint_snitch'] = 'GossipingPropertyFileSnitch'
+default['cassandra']['logs'] = '/var/log/cassandra'
+
